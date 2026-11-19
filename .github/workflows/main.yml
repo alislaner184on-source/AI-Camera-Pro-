@@ -40,11 +40,13 @@ jobs:
         with:
           gradle-version: '8.7'
 
+      
       - name: Compilar APK
+        working-directory: "./AI_Camera_Pro_GitHub_v0_1 (1)"
         run: |
-          echo "Procurando projeto Android..."
-          find . -name settings.gradle.kts -o -name settings.gradle
+          echo "Iniciando compilação da AI Camera Pro..."
           gradle assembleDebug --stacktrace
+
 
       - name: Disponibilizar APK
         uses: actions/upload-artifact@v4
